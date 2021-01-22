@@ -1,0 +1,29 @@
+.login-content{
+    height: 100vh;
+
+  }
+  
+  form{
+    width: 35rem;
+    border: 1px solid lightgray;
+    padding: 2rem;
+  }
+
+
+.body{
+
+  background-color: #fff;
+
+  background: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=245093128,4164201461&fm=26&gp=0.jpg);
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+  -webkit-background-size: cover;
+
+  -o-background-size: cover;
+
+  background-position: center 0;
+
+}
