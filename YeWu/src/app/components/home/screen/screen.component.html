@@ -1,0 +1,122 @@
+<div class="a">
+    <div style="text-align: center;width: 100%;">
+        <br>
+        <h1> 智慧猪舍管理系统</h1>
+    </div>
+</div>
+
+<div class="row mb-2 justify-content-center a">
+    <div class="col-auto">
+        <div class="col my-5 p-3 bg-white rounded">
+            <h3 id="time" style="width: 15rem;text-align: center;color: rgb(31, 17, 228);"></h3>
+        </div>
+
+        <div class="my-5 p-3 bg-white rounded shadow-sm" style="text-align: center;width: 100%;">
+            <div class="list-group">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        温度
+                        <span class="">{{temp}}℃</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        湿度
+                        <span class="">{{humd}}%</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <echarts class="echarts" [options]="chartOption" [merge]="updateOption"></echarts>
+
+
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary " (click)="turnonled()">灯泡开</button>
+                </div>
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary " (click)="turnoffled()">灯泡关</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-2">
+            <div class="row justify-content-around">
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary " (click)="turnonheat()">开加热器</button>
+                </div>
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary " (click)="turnoffheat()">关加热器</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-2">
+            <div class="row justify-content-around">
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary  " (click)="turnonhumi()">开加湿器</button>
+                </div>
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary  " (click)="turnoffhumi()">关加湿器</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary  " (click)="turnhighfan()">风扇高</button>
+                </div>
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary  " (click)="turnlowfan()">风扇低</button>
+                </div>
+                <div class=" col-4">
+                    <button type="button" class="btn btn-outline-secondary  " (click)="turnofffan()">风扇关</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-auto">
+            <div style="position: relative;" class=" row justify-content-around">
+
+                <div class="col">
+                    <div *ngIf="led == 0">
+                        <img src="../../assets/img/关灯.png" class="rounded float-left">
+                    </div>
+                    <div *ngIf="led == 1">
+                        <img src="../../assets/img/开灯.png" class="rounded float-left">
+                    </div>
+                </div>
+                <div class="col">
+                    <div *ngIf="fan == 0">
+                        <img src="../../assets/img/风扇关.png" class="rounded float-left">
+                    </div>
+                    <div *ngIf="fan == 1">
+                        <img src="../../assets/img/风扇低速.png" class="rounded float-left">
+                    </div>
+                    <div *ngIf="fan == 2">
+                        <img src="../..//assets/img/风扇高速.png" class="rounded float-left">
+                    </div>
+                </div>
+                <div class="col">
+                    <div *ngIf="humi == 0">
+                        <img src="../../assets/img/加湿器 关.png" class="rounded float-left">
+                    </div>
+                    <div *ngIf="humi == 1">
+                        <img src="../../assets/img/加湿器 开.png" class="rounded float-left">
+                    </div>
+                </div>
+                <div class="col">
+                    <div *ngIf="heat == 0">
+                        <img src="../../assets/img/加热 关.png" class="rounded float-left">
+                    </div>
+                    <div *ngIf="heat == 1">
+                        <img src="../../assets/img/加热 开.png" class="rounded float-left">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
